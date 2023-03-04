@@ -6,7 +6,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ master ]
-    
+
+# The git hub push was failing because of permission issues. This fixes that failure. 
+# I went through and tested each possible permission. This is the only that was required to fix the problem I was having.
+# For more on permissions: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
+permissions:
+  contents: write
+  
 jobs:
   deploy-to-github-pages:
     # use ubuntu-latest image to run steps on
