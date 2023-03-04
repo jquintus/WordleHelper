@@ -1,7 +1,7 @@
 using WordleSolver.Models;
 using WordleSolver.Services;
 
-namespace BlazorApp1.Tests
+namespace WordleSolver.Tests
 {
     public class WordlizerTests
 	{
