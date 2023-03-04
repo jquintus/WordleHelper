@@ -20,7 +20,7 @@
 		{
 			if (string.IsNullOrEmpty(guess)) return;
 			Guesses.Add(new(guess));
-			Suggestions = _service.GeneratePermutations(guess).ToList();
+			//Suggestions = _service.GeneratePermutations(guess).ToList();
 		}
 
 		public void Reset()
