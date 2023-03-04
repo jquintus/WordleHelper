@@ -1,0 +1,36 @@
+﻿@page "/wordlist"
+<h3>WordList</h3>
+
+<EditForm Model=@Model OnSubmit="@AddWord">
+	<InputText id="name" @bind-Value="@Model.Word" />
+
+	<button type="submit">Submit</button>
+</EditForm>
+
+<table>
+	<tbody>
+		@foreach (var word in Words)
+		{
+			<tr>
+				<td>@word</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+
+
+@code {
+	private List<string> Words { get; set; } = new List<String>();
+	private InputModel Model { get; set; } = new();
+	private readonly Wordlizer service = new();
+	private void AddWord()
+	{
+		if (!String.IsNullOrEmpty(Model.Word))
+		{
+			var words = service.GeneratePermutations(Model.Word).ToList();
+			Words = words;
+		}
+		Model.Word = string.Empty;
+	}
+}
