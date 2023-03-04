@@ -189,7 +189,7 @@
       "url": "WordleSolver.styles.css"
     },
     {
-      "hash": "sha256-kfXT+\/7PwnK7UBTMq8\/AX20+soj7u1sV\/U1lCtnmSZI=",
+      "hash": "sha256-eOKojIWsu1uhZRIkjuN2qgUTAGJaXhkV\/dJEijO6LoQ=",
       "url": "css\/app.css"
     },
     {
@@ -261,5 +261,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "ZB6n5peZ"
+  "version": "byJPIp6B"
 };

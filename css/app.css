@@ -62,3 +62,14 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+.letterButton {
+    width: 2em;
+    height: 2em;
+    margin: 2px;
+    font-size: 2em;
+    font-family: "Franklin Gothic";
+    border-color: white;
+    color: white;
+    background: #787c7e;
+}
