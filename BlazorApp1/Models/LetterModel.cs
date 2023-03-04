@@ -1,22 +1,32 @@
 ﻿namespace BlazorApp1.Models
 {
-    public record LetterModel(string Letter, int Position, LetterState State)
-    {
-        public LetterState State { get; private set; } = State;
+	public class LetterModel
+	{
 
-        public void ToggleState()
-        {
-            State = State switch
-            {
-                LetterState.NotPresent => LetterState.PreseentAndInWrongPosition,
-                LetterState.PreseentAndInWrongPosition => LetterState.PresentAndInCorrectPosition,
-                LetterState.PresentAndInCorrectPosition => LetterState.NotPresent,
+		public LetterModel(string letter, int position, LetterState state = LetterState.NotPresent)
+		{
+			Letter = letter;
+			Position = position;
+			State = state;
+		}
 
-                _ => LetterState.NotPresent,
-            };
-        }
+		public string Letter { get; }
+		public int Position { get; }
+		public LetterState State { get; private set; }
 
-        public override string ToString() => Letter;
+		public void ToggleState()
+		{
+			State = State switch
+			{
+				LetterState.NotPresent => LetterState.PreseentAndInWrongPosition,
+				LetterState.PreseentAndInWrongPosition => LetterState.PresentAndInCorrectPosition,
+				LetterState.PresentAndInCorrectPosition => LetterState.NotPresent,
 
-    }
+				_ => LetterState.NotPresent,
+			};
+		}
+
+		public override string ToString() => Letter;
+
+	}
 }
