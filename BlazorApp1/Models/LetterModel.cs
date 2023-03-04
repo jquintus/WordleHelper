@@ -26,6 +26,14 @@
 			};
 		}
 
+		public string Color => State switch
+		{
+			LetterState.NotPresent => "#787c7e",
+			LetterState.PreseentAndInWrongPosition => "#c9b458",
+			LetterState.PresentAndInCorrectPosition => "#6aaa64",
+			_ => "#787c7e",
+		};
+
 		public override string ToString() => Letter;
 
 	}

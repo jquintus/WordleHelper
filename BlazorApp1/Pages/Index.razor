@@ -18,7 +18,11 @@
 					<td>
 						@foreach (var letter in guess.Letters)
 						{
-							<button @onclick=letter.ToggleState>@letter</button>
+							<button 
+								@onclick=letter.ToggleState 
+								style="background-color:@letter.Color"
+								class="letterButton"
+							>@letter</button>
 						}
 					</td>
 				</tr>
