@@ -2,6 +2,19 @@
 {
 	public class LetterModel
 	{
+		public string Color => State switch
+		{
+			LetterState.NotPresent => "#787c7e",
+			LetterState.PreseentAndInWrongPosition => "#c9b458",
+			LetterState.PresentAndInCorrectPosition => "#6aaa64",
+			_ => "#787c7e",
+		};
+
+		public string Letter { get; }
+
+		public int Position { get; }
+
+		public LetterState State { get; private set; }
 
 		public LetterModel(string letter, int position, LetterState state = LetterState.NotPresent)
 		{
@@ -9,10 +22,6 @@
 			Position = position;
 			State = state;
 		}
-
-		public string Letter { get; }
-		public int Position { get; }
-		public LetterState State { get; private set; }
 
 		public void ToggleState()
 		{
@@ -26,15 +35,6 @@
 			};
 		}
 
-		public string Color => State switch
-		{
-			LetterState.NotPresent => "#787c7e",
-			LetterState.PreseentAndInWrongPosition => "#c9b458",
-			LetterState.PresentAndInCorrectPosition => "#6aaa64",
-			_ => "#787c7e",
-		};
-
 		public override string ToString() => Letter;
-
 	}
 }
