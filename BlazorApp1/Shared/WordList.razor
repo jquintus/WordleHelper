@@ -5,32 +5,49 @@
 	<InputText id="name" @bind-Value="@Model.Word" />
 
 	<button type="submit">Submit</button>
-</EditForm>
+	<button @onclick=@Reset>Clear</button>
 
-<table>
-	<tbody>
-		@foreach (var word in Words)
-		{
-			<tr>
-				<td>@word</td>
-			</tr>
-		}
-	</tbody>
-</table>
+	<h1> Guesses </h1>
+	<table>
+		<tbody>
+			@foreach (var guess in Model.Guesses)
+			{
+				<tr>
+					<td>
+						@foreach (var letter in guess)
+						{
+							<button>@letter</button>
+						}
+					</td>
+				</tr>
+
+			}
+		</tbody>
+	</table>
+
+	<h1> Suggestions </h1>
+
+	<table>
+		<tbody>
+			@foreach (var suggestion in Model.Suggestions)
+			{
+				<tr>
+					<td>@suggestion</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</EditForm>
 
 
 
 @code {
-	private List<string> Words { get; set; } = new List<String>();
-	private InputModel Model { get; set; } = new();
-	private readonly Wordlizer service = new();
-	private void AddWord()
-	{
-		if (!String.IsNullOrEmpty(Model.Word))
-		{
-			var words = service.GeneratePermutations(Model.Word).ToList();
-			Words = words;
-		}
-		Model.Word = string.Empty;
-	}
+    private InputModel Model { get; set; } = new(new());
+    private void AddWord()
+    {
+        Model.AddGuess(Model.Word);
+        Model.Word = string.Empty;
+    }
+
+    private void Reset() => Model.Reset();
 }

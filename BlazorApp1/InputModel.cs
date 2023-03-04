@@ -1,43 +1,32 @@
 ﻿namespace BlazorApp1
 {
-	public class InputModel
-	{
-		public string Word { get; set; }
-		public InputModel()
-		{
-			Word = string.Empty;
-		}
-	}
+    public class InputModel
+    {
+        private readonly Wordlizer _service;
 
-	public class Wordlizer
-	{
-		public IEnumerable<string> GeneratePermutations(string input)
-		{
-			return input
-				.OrDefault()
-				.Permutate()
-				.Distinct();
-		}
+        public string Word { get; set; }
+        public List<string> Guesses { get; private set; }
+        public List<string> Suggestions { get; private set; }
 
-	}
-	public static class PermutationExtentions
-	{
-		public static string OrDefault(this string source) => source ?? string.Empty;
+        public InputModel(Wordlizer service)
+        {
+            _service = service;
+            Word = string.Empty;
+            Guesses = new List<string>();
+            Suggestions = new List<string>();
+        }
 
-		public static IEnumerable<string> Permutate(this string source) =>
-		 source
-			.AsEnumerable()
-			.Permutate()
-			.Select(a => new string(a));
+        public void Reset()
+        {
+            Guesses = new List<string>();
+            Suggestions = new List<string>();
+        }
 
-		public static IEnumerable<T[]> Permutate<T>(this IEnumerable<T> source)
-		{
-			return permutate(source, Enumerable.Empty<T>());
-			IEnumerable<T[]> permutate(IEnumerable<T> reminder, IEnumerable<T> prefix) =>
-				!reminder.Any() ? new[] { prefix.ToArray() } :
-				reminder.SelectMany((c, i) => permutate(
-					reminder.Take(i).Concat(reminder.Skip(i + 1)).ToArray(),
-					prefix.Append(c)));
-		}
-	}
+        public void AddGuess(string guess)
+        {
+            if (string.IsNullOrEmpty(guess)) return;
+            Guesses.Add(guess);
+            Suggestions = _service.GeneratePermutations(guess).ToList();
+        }
+    }
 }
