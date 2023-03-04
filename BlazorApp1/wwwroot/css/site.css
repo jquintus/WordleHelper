@@ -67,6 +67,7 @@ a, .btn-link {
     width: 2em;
     height: 2em;
     border-color: white;
+    margin: 2px;
     color: white;
     font-size: 2em;
     font-family: "Franklin Gothic"
