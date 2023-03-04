@@ -3,7 +3,7 @@
 	public enum LetterState
 	{
 		NotPresent,
-		PreseentAndInWrongPosition,
-		PresentAndInCorrectPosition,
+		WrongPosition,
+		CorrectPosition,
 	}
 }

@@ -7,35 +7,53 @@ namespace BlazorApp1
 
 	public class Wordlizer
 	{
-		public IEnumerable<string> GeneratePermutations(IEnumerable<WordleLetter> letters)
+		public IEnumerable<string> GeneratePermutations(IEnumerable<WordleLetter> letters, int length = 5)
 		{
 			if (letters == null) return Enumerable.Empty<string>();
 
 			var certainLetters = GetCertainLetters(letters);
 
 			var uncertainLetters = letters
-				.Where(l => l.State == LetterState.PreseentAndInWrongPosition)
-				.Select(l => l.Letter);
+				.Where(l => l.State == LetterState.WrongPosition)
+				.ToList();
 
-			Permutate(uncertainLetters)
-				.Select(permutation => new string(permutation))
+			var result = uncertainLetters
+				.Select(l => l.Letter)
+				.Distinct()
+				.JoinToString()
+				.PadRight(length, '-')
+				.Permutate()
 				.Select(permutation => Expand(permutation, certainLetters))
+				.Where(permutation => IsValidForCertainLetters(permutation, certainLetters))
+				.Where(permutation => IsValidForUncertainLetters(permutation, uncertainLetters))
 				.Distinct();
-			return Enumerable.Empty<string>();
+
+			return result;
+		}
+
+		private static bool IsValidForUncertainLetters(string permutation, List<WordleLetter> uncertainLetters)
+		{
+			return uncertainLetters.None(ul => permutation[ul.Position] == ul.Letter);
+		}
+
+		private static bool IsValidForCertainLetters(string permutation, List<WordleLetter> certainLetters)
+		{
+			return true;
 		}
 
 		private static List<WordleLetter> GetCertainLetters(IEnumerable<WordleLetter> letters)
 		{
 			var certainLetters = letters
 							.Distinct()
-							.Where(l => l.State == LetterState.PresentAndInCorrectPosition)
+							.Where(l => l.State == LetterState.CorrectPosition)
 							.OrderBy(l => l.Position)
 							.ToList();
 
 			var invalidLetters = certainLetters.GroupBy(l => l.Position)
 				.Where(group => group.Count() > 1)
 				.Select(l => l.Key + 1)
-				.Select(idx => idx.ToString());
+				.Select(idx => idx.ToString())
+				.JoinToString(", ");
 
 			if (invalidLetters.Any())
 			{
@@ -45,20 +63,9 @@ namespace BlazorApp1
 			return certainLetters;
 		}
 
-		private static IEnumerable<char[]> Permutate(IEnumerable<char> source)
+		private string Expand(string permutation, List<WordleLetter> certainLetters)
 		{
-			return permutate(source, Enumerable.Empty<char>());
-
-			IEnumerable<char[]> permutate(IEnumerable<char> reminder, IEnumerable<char> prefix) =>
-				!reminder.Any() ? new[] { prefix.ToArray() } :
-				reminder.SelectMany((c, i) => permutate(
-					reminder.Take(i).Concat(reminder.Skip(i + 1)).ToArray(),
-					prefix.Append(c)));
-		}
-
-		private object Expand(string permutation, List<WordleLetter> certainLetters)
-		{
-			throw new NotImplementedException();
+			return permutation;
 		}
 	}
 }

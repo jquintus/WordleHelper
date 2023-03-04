@@ -5,8 +5,8 @@
 		public string Color => State switch
 		{
 			LetterState.NotPresent => "#787c7e",
-			LetterState.PreseentAndInWrongPosition => "#c9b458",
-			LetterState.PresentAndInCorrectPosition => "#6aaa64",
+			LetterState.WrongPosition => "#c9b458",
+			LetterState.CorrectPosition => "#6aaa64",
 			_ => "#787c7e",
 		};
 
@@ -27,9 +27,9 @@
 		{
 			State = State switch
 			{
-				LetterState.NotPresent => LetterState.PreseentAndInWrongPosition,
-				LetterState.PreseentAndInWrongPosition => LetterState.PresentAndInCorrectPosition,
-				LetterState.PresentAndInCorrectPosition => LetterState.NotPresent,
+				LetterState.NotPresent => LetterState.WrongPosition,
+				LetterState.WrongPosition => LetterState.CorrectPosition,
+				LetterState.CorrectPosition => LetterState.NotPresent,
 
 				_ => LetterState.NotPresent,
 			};
