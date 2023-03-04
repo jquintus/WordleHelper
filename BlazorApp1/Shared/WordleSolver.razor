@@ -1,6 +1,5 @@
-﻿@page "/wordlist"
+﻿@page "/wordle"
 @using BlazorApp1.Models;
-<h3>WordList</h3>
 
 <EditForm Model=@Model OnSubmit="@AddWord">
 	<InputText id="name" @bind-Value="@Model.Word" />
