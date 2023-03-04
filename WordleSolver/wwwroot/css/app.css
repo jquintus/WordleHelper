@@ -81,6 +81,8 @@ a, .btn-link {
     color: white;
     background: #c9b458;
     /*background: #6aaa64;*/
+    /*background: #d3d6da;*/
+    /*background: #aa646a*/
 }
 
 .clearButton {
@@ -90,4 +92,7 @@ a, .btn-link {
     color: white;
     /*background: #c9b458;*/
     background: #6aaa64;
+    /*background: #d3d6da;*/
+    /*background: #646aaa;*/
+    /*background: #aa646a*/
 }
