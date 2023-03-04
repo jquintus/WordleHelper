@@ -26,7 +26,8 @@ namespace BlazorApp1
 				.Select(permutation => Expand(permutation, certainLetters))
 				.Where(permutation => IsValidForCertainLetters(permutation, certainLetters))
 				.Where(permutation => IsValidForUncertainLetters(permutation, uncertainLetters))
-				.Distinct();
+				.Distinct()
+				.Order();
 
 			return result;
 		}

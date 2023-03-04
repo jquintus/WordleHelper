@@ -19,8 +19,18 @@
 		public void AddGuess(string guess)
 		{
 			if (string.IsNullOrEmpty(guess)) return;
-			Guesses.Add(new(guess));
-			//Suggestions = _service.GeneratePermutations(guess).ToList();
+			Guesses.Add(new(guess.ToUpper()));
+		}
+
+		public void GenerateSuggestions()
+		{
+			var letters = Guesses
+				.SelectMany(g => g.Letters)
+				.Select(l => new WordleLetter(l.Letter.First(), l.Position, l.State));
+
+			Suggestions = _service
+				.GeneratePermutations(letters)
+				.ToList();
 		}
 
 		public void Reset()

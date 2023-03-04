@@ -2,6 +2,7 @@
 {
 	public static class Extentions
 	{
+
 		public static string JoinToString(this IEnumerable<string> source, string separator = "")
 		{
 			return string.Join(separator, source);
@@ -12,6 +13,10 @@
 			return string.Join(separator, source);
 		}
 
+		public static IEnumerable<TSource> Order<TSource>(this IEnumerable<TSource> source)
+		{
+			return source.OrderBy(x => x);
+		}
 		public static bool None<TSource>(this IEnumerable<TSource> source)
 		{
 			return !source.Any();

@@ -7,7 +7,8 @@
 	<InputText id="name" @bind-Value="@Model.Word" />
 
 	<button type="submit">Submit</button>
-	<button @onclick=@Reset>Clear</button>
+	<button @onclick=@GenerateSuggestions> Generate </button>
+	<button @onclick=@Reset>               Clear    </button>
 
 	<h1> Guesses </h1>
 	<table>
@@ -18,11 +19,11 @@
 					<td>
 						@foreach (var letter in guess.Letters)
 						{
-							<button 
-								@onclick=letter.ToggleState 
-								style="background-color:@letter.Color"
-								class="letterButton"
-							>@letter</button>
+							<button @onclick=letter.ToggleState
+			   style="background-color:@letter.Color"
+			   class="letterButton">
+								@letter
+							</button>
 						}
 					</td>
 				</tr>
@@ -56,4 +57,5 @@
 	}
 
 	private void Reset() => Model.Reset();
+	private void GenerateSuggestions() => Model.GenerateSuggestions();
 }
