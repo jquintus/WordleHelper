@@ -1,8 +1,9 @@
-using BlazorApp1.Models;
+using WordleSolver.Models;
+using WordleSolver.Services;
 
 namespace BlazorApp1.Tests
 {
-	public class WordlizerTests
+    public class WordlizerTests
 	{
 		[Fact]
 		public void GeneratePermumations_MultipleUncertainLetters_ReturnsAllPermutations()

@@ -1,27 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using WordleSolver.Models;
+﻿using WordleSolver.Models;
 
-namespace WordleSolver
+namespace WordleSolver.Services
 {
-	public record WordleLetter(char Letter, int Position, LetterState State);
-
-	public class WordLetterComparer : IEqualityComparer<WordleLetter>
-	{
-		public bool Equals(WordleLetter? x, WordleLetter? y)
-		{
-			if (ReferenceEquals(x, y)) return true;
-			if (x == null && y == null) return true;
-			if (x == null || y == null) return false;
-
-			return x.Letter.Equals(y.Letter);
-		}
-
-		public int GetHashCode([DisallowNull] WordleLetter obj)
-		{
-			return obj.Letter.GetHashCode();
-		}
-	}
-
 	public class Wordlizer
 	{
 		public IEnumerable<string> GeneratePermutations(IEnumerable<WordleLetter> letters, int length = 5)
