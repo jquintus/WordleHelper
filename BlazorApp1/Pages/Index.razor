@@ -1,11 +1,55 @@
 ﻿@page "/"
+@using BlazorApp1.Models;
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Wordle Solver</PageTitle>
 
-<h1>Hello, world!!</h1>
+<EditForm Model=@Model OnSubmit="@AddWord">
+	<InputText id="name" @bind-Value="@Model.Word" />
 
-Welcome to your new app. This is Josh. He will be OK by himself.
+	<button type="submit">Submit</button>
+	<button @onclick=@Reset>Clear</button>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+	<h1> Guesses </h1>
+	<table>
+		<tbody>
+			@foreach (var guess in Model.Guesses)
+			{
+				<tr>
+					<td>
+						@foreach (var letter in guess.Letters)
+						{
+							<button>@letter</button>
+						}
+					</td>
+				</tr>
 
-<Counter />
+			}
+		</tbody>
+	</table>
+
+	<h1> Suggestions </h1>
+
+	<table>
+		<tbody>
+			@foreach (var suggestion in Model.Suggestions)
+			{
+				<tr>
+					<td>@suggestion</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</EditForm>
+
+
+
+@code {
+	private InputModel Model { get; set; } = new(new());
+	private void AddWord()
+	{
+		Model.AddGuess(Model.Word);
+		Model.Word = string.Empty;
+	}
+
+	private void Reset() => Model.Reset();
+}
