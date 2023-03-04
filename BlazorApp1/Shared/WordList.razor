@@ -1,4 +1,5 @@
 ﻿@page "/wordlist"
+@using BlazorApp1.Models;
 <h3>WordList</h3>
 
 <EditForm Model=@Model OnSubmit="@AddWord">
@@ -14,7 +15,7 @@
 			{
 				<tr>
 					<td>
-						@foreach (var letter in guess)
+						@foreach (var letter in guess.Letters)
 						{
 							<button>@letter</button>
 						}
