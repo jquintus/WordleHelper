@@ -10,8 +10,6 @@ Hello world
 	<InputText id="name" @bind-Value="@Model.Word" />
 
 	<button type="submit">Submit</button>
-	<button @onclick=@GenerateSuggestions> Generate </button>
-	<button @onclick=@Reset>               Clear    </button>
 
 	<h1> Guesses </h1>
 	<table>
@@ -34,6 +32,8 @@ Hello world
 		</tbody>
 	</table>
 
+	<br />
+	<button @onclick=@GenerateSuggestions class="generateButton"> Generate </button>
 	<h1> Suggestions </h1>
 
 	<table>
@@ -45,6 +45,11 @@ Hello world
 				</tr>
 			}
 		</tbody>
+
+		<br />
+		<br />
+
+		<button @onclick=@Reset class="clearButton"> Clear </button>
 	</table>
 </EditForm>
 

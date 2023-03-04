@@ -73,3 +73,21 @@ a, .btn-link {
     color: white;
     background: #787c7e;
 }
+
+.generateButton {
+    font-size: 2em;
+    font-family: "Franklin Gothic";
+    border-color: white;
+    color: white;
+    background: #c9b458;
+    /*background: #6aaa64;*/
+}
+
+.clearButton {
+    font-size: 2em;
+    font-family: "Franklin Gothic";
+    border-color: white;
+    color: white;
+    /*background: #c9b458;*/
+    background: #6aaa64;
+}
