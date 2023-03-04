@@ -14,6 +14,7 @@ namespace BlazorApp1
 
 			var uncertainLetters = letters
 				.Where(l => l.State == LetterState.WrongPosition)
+				.Where(l => !certainLetters.Contains(l, new WordLetterComparer()))
 				.ToList();
 
 			var result = uncertainLetters
@@ -25,6 +26,7 @@ namespace BlazorApp1
 				.Distinct()
 				.Select(permutation => Expand(permutation, certainLetters))
 				.Where(permutation => IsValidForUncertainLetters(permutation, uncertainLetters))
+				.Distinct()
 				.Order();
 
 			return result;

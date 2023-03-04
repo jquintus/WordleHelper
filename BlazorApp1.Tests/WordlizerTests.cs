@@ -165,5 +165,38 @@ namespace BlazorApp1.Tests
 			// Assert
 			Assert.Equal(expected, actual);
 		}
+
+		[Fact]
+		public void GeneratePermutations_RealWorldTest2_ReturnsOnePermutation()
+		{
+			// The word was "TREND"
+			// Assemble
+			var wl = new Wordlizer();
+			var input = new List<WordleLetter>
+			{
+				new WordleLetter('c', 0, LetterState.CorrectPosition),
+				new WordleLetter('r', 1, LetterState.WrongPosition),
+				new WordleLetter('a', 2, LetterState.NotPresent),
+				new WordleLetter('n', 3, LetterState.NotPresent),
+				new WordleLetter('e', 4, LetterState.WrongPosition),
+
+				new WordleLetter('c', 0, LetterState.CorrectPosition),
+				new WordleLetter('h', 1, LetterState.NotPresent),
+				new WordleLetter('a', 2, LetterState.NotPresent),
+				new WordleLetter('i', 3, LetterState.NotPresent),
+				new WordleLetter('r', 4, LetterState.CorrectPosition),
+			};
+			var expected = new List<string> {
+				"c--er",
+				"c-e-r",
+				"ce--r",
+			};
+
+			// Act
+			var actual = wl.GeneratePermutations(input);
+
+			// Assert
+			Assert.Equal(expected, actual);
+		}
 	}
 }
