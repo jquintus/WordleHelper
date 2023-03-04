@@ -2,7 +2,7 @@
 
 namespace WordleSolver.Services
 {
-	public class Wordlizer
+	public class Wordlizer : IWordlizer
 	{
 		public IEnumerable<string> GeneratePermutations(IEnumerable<WordleLetter> letters, int length = 5)
 		{

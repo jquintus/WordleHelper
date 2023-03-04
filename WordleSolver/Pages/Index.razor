@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using WordleSolver.Models;
+@using WordleSolver.Services;
 
 <PageTitle>Wordle Solver</PageTitle>
 
@@ -50,7 +51,7 @@ Hello world
 
 
 @code {
-	private InputModel Model { get; set; } = new(new());
+	private InputModel Model { get; set; } = new(new Wordlizer());
 	private void AddWord()
 	{
 		Model.AddGuess(Model.Word);

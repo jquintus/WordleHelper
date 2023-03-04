@@ -4,13 +4,13 @@ namespace WordleSolver.Models
 {
 	public class InputModel
 	{
-		private readonly Wordlizer _service;
+		private readonly IWordlizer _service;
 
 		public List<GuessModel> Guesses { get; private set; }
 		public List<string> Suggestions { get; private set; }
 		public string Word { get; set; }
 
-		public InputModel(Wordlizer service)
+		public InputModel(IWordlizer service)
 		{
 			_service = service;
 			Word = string.Empty;
