@@ -1,5 +1,4 @@
 ﻿using BlazorApp1.Models;
-using System.Linq;
 
 namespace BlazorApp1
 {
@@ -23,23 +22,26 @@ namespace BlazorApp1
 				.JoinToString()
 				.PadRight(length, '-')
 				.Permutate()
-				.Select(permutation => Expand(permutation, certainLetters))
-				.Where(permutation => IsValidForCertainLetters(permutation, certainLetters))
-				.Where(permutation => IsValidForUncertainLetters(permutation, uncertainLetters))
 				.Distinct()
+				.Select(permutation => Expand(permutation, certainLetters))
+				.Where(permutation => IsValidForUncertainLetters(permutation, uncertainLetters))
 				.Order();
 
 			return result;
 		}
 
-		private static bool IsValidForUncertainLetters(string permutation, List<WordleLetter> uncertainLetters)
+		private static string Expand(string permutation, List<WordleLetter> certainLetters)
 		{
-			return uncertainLetters.None(ul => permutation[ul.Position] == ul.Letter);
-		}
+			char[] expanded = new char[permutation.Length];
+			for (int i = 0; i < permutation.Length; i++)
+			{
+				expanded[i] = certainLetters
+					.Where(l => l.Position == i)
+					.Select(l => l.Letter)
+					.FirstOrDefault(permutation[i]);
+			}
 
-		private static bool IsValidForCertainLetters(string permutation, List<WordleLetter> certainLetters)
-		{
-			return true;
+			return new string(expanded);
 		}
 
 		private static List<WordleLetter> GetCertainLetters(IEnumerable<WordleLetter> letters)
@@ -64,9 +66,12 @@ namespace BlazorApp1
 			return certainLetters;
 		}
 
-		private string Expand(string permutation, List<WordleLetter> certainLetters)
+		private static bool IsValidForUncertainLetters(string permutation, List<WordleLetter> uncertainLetters)
 		{
-			return permutation;
+			bool areLettersInWrongSpots = uncertainLetters.None(ul => permutation[ul.Position] == ul.Letter);
+			bool areAllLettersPresent = uncertainLetters.All(ul => permutation.Contains(ul.Letter));
+
+			return areLettersInWrongSpots && areAllLettersPresent;
 		}
 	}
 }
