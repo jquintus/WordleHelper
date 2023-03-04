@@ -5,3 +5,4 @@
 [![pages-build-deployment](https://github.com/jquintus/WordleHelper/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jquintus/WordleHelper/actions/workflows/pages/pages-build-deployment)
 
 Visit the site and [Solve Wordle](https://quintussential.com/WordleHelper/)
+
