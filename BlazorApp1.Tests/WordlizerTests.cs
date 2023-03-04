@@ -19,15 +19,13 @@ namespace BlazorApp1.Tests
 
 			var expected = new List<string>
 			{
-				"b-a--",
-				"b--a-",
-				"b---a",
-
-				"--ab-",
-				"---ba",
-
-				"--a-b",
 				"---ab",
+				"---ba",
+				"--a-b",
+				"--ab-",
+				"b---a",
+				"b--a-",
+				"b-a--",
 			};
 
 			// Act
@@ -35,9 +33,7 @@ namespace BlazorApp1.Tests
 
 			// Assert
 			// We have to order the lists to make sure they can be compared
-			Assert.Equal(
-				expected.OrderBy(s => s),
-				actual.OrderBy(s => s));
+			Assert.Equal(expected, actual);
 		}
 
 		[Fact]
@@ -52,10 +48,10 @@ namespace BlazorApp1.Tests
 
 			var expected = new List<string>
 			{
-				"-a---",
-				"--a--",
-				"---a-",
 				"----a",
+				"---a-",
+				"--a--",
+				"-a---",
 			};
 
 			// Act
@@ -78,9 +74,9 @@ namespace BlazorApp1.Tests
 
 			var expected = new List<string>
 			{
-				"--a--",
-				"---a-",
 				"----a",
+				"---a-",
+				"--a--",
 			};
 
 			// Act
