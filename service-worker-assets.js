@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-xIocJ6M\/8gfPaDNR+iB9tt0MAB9vqUx\/7ijGaycmSV8=",
+      "hash": "sha256-iBiyyV7F4GdtqtWTwzHEHhns30kvTXnaYOVJhC0RRg8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -185,12 +185,12 @@
       "url": "_framework\/System.Text.Json.dll"
     },
     {
-      "hash": "sha256-uRILMVJWJ98aKPAVIgpxRjYUk9YJ\/yUHfgwz88MPmII=",
-      "url": "_framework\/WordleSolver.dll"
+      "hash": "sha256-FnNDDgftveyfpaXeThUzNtbcAwskcbT2WgX0d8WO2GY=",
+      "url": "_framework\/WordleHelper.dll"
     },
     {
-      "hash": "sha256-LTTSRM7hKiHNHOSWaVovozcgM3xQWm1iM02PShF4mT4=",
-      "url": "WordleSolver.styles.css"
+      "hash": "sha256-TnVF2n\/uNjQ+2wCq+6tPEVO5EvMW4yEWaClX3zG4tao=",
+      "url": "WordleHelper.styles.css"
     },
     {
       "hash": "sha256-r6Sdtyt8IMQq+kC9Mj8YqVZhmKtmFr9wPgz17w2EVaM=",
@@ -253,11 +253,11 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-x6Ng6gg8cv\/awmJQ86Q\/qnrRp7be3ur4su53M3X5gMc=",
+      "hash": "sha256-RJO8efZJEU6yt1hroRWP+8G\/xoaYz0BoIYwvREI+HuA=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-4E+jcbi8YW\/t40AG0dfFiiAnf7caLN4V8IoO3YWXkew=",
+      "hash": "sha256-+6b1LlYgfOLZ\/hNAe+YEWJUaS8lqxf9x3WIHDgK+yTM=",
       "url": "manifest.json"
     },
     {
@@ -265,5 +265,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "nCFel1IP"
+  "version": "CN2lV5YC"
 };

@@ -1,6 +1,6 @@
 {
-  "name": "WordleSolver",
-  "short_name": "WordleSolver",
+  "name": "Wordle Helper",
+  "short_name": "Wordle Helper",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",

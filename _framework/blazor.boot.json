@@ -2,7 +2,7 @@
   "cacheBootResources": true,
   "config": [ ],
   "debugBuild": false,
-  "entryAssembly": "WordleSolver",
+  "entryAssembly": "WordleHelper",
   "icuDataMode": 0,
   "linkerEnabled": true,
   "resources": {
@@ -44,7 +44,7 @@
       "System.Runtime.dll": "sha256-yN50kKCivtUJpShLgu+CBHkxtxIScHLcz0KNAhkGzDI=",
       "System.Text.Encodings.Web.dll": "sha256-7nnVIoeWETPu7pR2jmZecmhvNJgS0JmhidpXfSZlaUo=",
       "System.Text.Json.dll": "sha256-m8x3WHauJaahnvkPD0v\/2eW+VVYh33f5JG0FM8N\/1bU=",
-      "WordleSolver.dll": "sha256-uRILMVJWJ98aKPAVIgpxRjYUk9YJ\/yUHfgwz88MPmII="
+      "WordleHelper.dll": "sha256-FnNDDgftveyfpaXeThUzNtbcAwskcbT2WgX0d8WO2GY="
     },
     "extensions": null,
     "lazyAssembly": null,
