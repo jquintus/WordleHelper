@@ -4,14 +4,20 @@
 
 <PageTitle>Wordle Solver</PageTitle>
 
-Hello world
+<h1> Wordle Solver</h1>
+Enter your guesses from Wordle. Click on the letters in the word list to match the results from Wordle.
+
+<br />
+<br />
 
 <EditForm Model=@Model OnSubmit="@AddWord">
 	<InputText id="name" @bind-Value="@Model.Word" />
 
 	<button type="submit">Submit</button>
 
-	<h1> Guesses </h1>
+	<br />
+	<br />
+	<h2> Guesses </h2>
 	<table>
 		<tbody>
 			@foreach (var guess in Model.Guesses)
@@ -34,7 +40,10 @@ Hello world
 
 	<br />
 	<button @onclick=@GenerateSuggestions class="generateButton"> Generate </button>
-	<h1> Suggestions </h1>
+
+	<br />
+	<br />
+	<h2> Suggestions </h2>
 
 	<table>
 		<tbody>
@@ -46,7 +55,6 @@ Hello world
 			}
 		</tbody>
 
-		<br />
 		<br />
 
 		<button @onclick=@Reset class="clearButton"> Clear </button>
