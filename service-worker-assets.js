@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-P6\/HwWe+WhlbtKaHjKU7BD+NUBHqR3xo3ukM5C8eHU4=",
+      "hash": "sha256-ARWuNOOzja9ifDEWarpiaG8bcR90Sfu1Jk9\/CF5i\/10=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -181,7 +181,7 @@
       "url": "_framework\/System.Text.Json.dll"
     },
     {
-      "hash": "sha256-lJ6m3gMljRWLNIq+IZgsArFcp2q90SfLY7tS8TI19O8=",
+      "hash": "sha256-proPus9pzpB8kWw6hY3eTN6g8moeKd++iCY79TjmibU=",
       "url": "_framework\/WordleSolver.dll"
     },
     {
@@ -189,7 +189,7 @@
       "url": "WordleSolver.styles.css"
     },
     {
-      "hash": "sha256-eOKojIWsu1uhZRIkjuN2qgUTAGJaXhkV\/dJEijO6LoQ=",
+      "hash": "sha256-r6Sdtyt8IMQq+kC9Mj8YqVZhmKtmFr9wPgz17w2EVaM=",
       "url": "css\/app.css"
     },
     {
@@ -261,5 +261,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "38RzBqnl"
+  "version": "W0\/I4PYU"
 };

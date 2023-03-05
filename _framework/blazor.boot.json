@@ -43,7 +43,7 @@
       "System.Runtime.dll": "sha256-yN50kKCivtUJpShLgu+CBHkxtxIScHLcz0KNAhkGzDI=",
       "System.Text.Encodings.Web.dll": "sha256-7nnVIoeWETPu7pR2jmZecmhvNJgS0JmhidpXfSZlaUo=",
       "System.Text.Json.dll": "sha256-m8x3WHauJaahnvkPD0v\/2eW+VVYh33f5JG0FM8N\/1bU=",
-      "WordleSolver.dll": "sha256-lJ6m3gMljRWLNIq+IZgsArFcp2q90SfLY7tS8TI19O8="
+      "WordleSolver.dll": "sha256-proPus9pzpB8kWw6hY3eTN6g8moeKd++iCY79TjmibU="
     },
     "extensions": null,
     "lazyAssembly": null,
