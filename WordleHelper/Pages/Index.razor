@@ -8,10 +8,10 @@
 	<a class="navbar-brand" href="#">
 		<img src="icon-192.png" width="30" height="30" class="d-inline-block align-top" alt="">
 		Wordle Helper
-		<a href="https://github.com/jquintus/WordleHelper" target="_blank " margin="1em" padding="1em"
-			<span class="oi oi-info" aria-hidden="true"></span>
-			
-		</a>
+	</a>
+
+	<a href="https://github.com/jquintus/WordleHelper" target="_blank " margin="1em" padding="1em">
+		<span class="oi oi-info" aria-hidden="true"></span>
 	</a>
 </nav>
 
@@ -24,12 +24,17 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 	<DataAnnotationsValidator />
 	<ValidationSummary />
 
-	<InputText id="name" @bind-Value="@Model.Word" />
+	<div class="input-group mb-3">
+		<InputText @bind-Value="@Model.Word" type="text" class="form-control" placeholder="Guess" aria-label="guess" aria-describedby="button-addon2" />
+		<div class="input-group-append">
+			<button class="btn btn-outline-secondary" type="submit">Submit</button>
+		</div>
+	</div>
+</EditForm>
 
-	<button type="submit">Submit</button>
+@if (Model.Guesses.Any())
+{
 
-	<br />
-	<br />
 	<h2> Guesses </h2>
 	<table>
 		<tbody>
@@ -40,8 +45,8 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 						@foreach (var letter in guess.Letters)
 						{
 							<button @onclick=letter.ToggleState
-			   style="background-color:@letter.Color"
-			   class="letterButton">
+				  style="background-color:@letter.Color"
+				  class="letterButton">
 								@letter
 							</button>
 						}
@@ -50,31 +55,45 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 			}
 		</tbody>
 	</table>
+}
 
-	<br />
-	<button @onclick=@GenerateSuggestions class="generateButton"> Generate </button>
-
-	<br />
-	<br />
-	<h2> Suggestions </h2>
-
-	<table>
-		<tbody>
-			@foreach (var suggestion in Model.Suggestions)
-			{
-				<tr>
-					<td>@suggestion</td>
-				</tr>
-			}
-		</tbody>
-
+@if (Model.Suggestions.Any())
+{
+	<div>
 		<br />
+		<h2> Suggestions </h2>
 
-		<button @onclick=@Reset class="clearButton"> Clear </button>
-	</table>
-</EditForm>
+		<table>
+			<tbody>
+				@foreach (var suggestion in Model.Suggestions)
+				{
+					<tr>
+						<td>@suggestion</td>
+					</tr>
+				}
+			</tbody>
 
+			<br />
 
+			@*<button @onclick=@Reset class="clearButton"> Clear </button>*@
+		</table>
+
+		@*<button @onclick=@GenerateSuggestions class="generateButton"> Generate </button>*@
+	</div>
+}
+<br />
+
+@if (Model.Guesses.Any())
+{
+
+	<div class="right-aligned">
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<button type="button" class="btn btn-secondary" @onclick=@GenerateSuggestions>Generate</button>
+			<button type="button" class="btn btn-secondary" @onclick=@Reset>Clear</button>
+		</div>
+	</div>
+	<br />
+}
 
 @code {
 	InputModel Model { get; set; } = new(new Wordlizer());
