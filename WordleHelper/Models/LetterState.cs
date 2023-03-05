@@ -1,4 +1,4 @@
-﻿namespace WordleSolver.Models
+﻿namespace WordleHelper.Models
 {
 	public enum LetterState
 	{

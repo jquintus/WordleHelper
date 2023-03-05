@@ -4,5 +4,5 @@
 
 [![pages-build-deployment](https://github.com/jquintus/WordleHelper/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jquintus/WordleHelper/actions/workflows/pages/pages-build-deployment)
 
-Visit the site and [Solve Wordle](https://quintussential.com/WordleHelper/)
+Visit the site and [getting some hints for Wordle](https://quintussential.com/WordleHelper/)
 

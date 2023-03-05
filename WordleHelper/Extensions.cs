@@ -1,4 +1,4 @@
-﻿namespace WordleSolver
+﻿namespace WordleHelper
 {
 	public static class Extentions
 	{

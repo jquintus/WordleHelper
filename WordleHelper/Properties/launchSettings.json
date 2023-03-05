@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "WordleSolver": {
+    "WordleHelper": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace WordleSolver.Services
+namespace WordleHelper.Services
 {
 	public class WordLetterComparer : IEqualityComparer<WordleLetter>
     {

@@ -1,4 +1,4 @@
-﻿namespace WordleSolver.Services
+﻿namespace WordleHelper.Services
 {
 	public interface IWordlizer
 	{

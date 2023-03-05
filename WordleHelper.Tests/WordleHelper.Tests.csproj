@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WordleSolver\WordleSolver.csproj" />
+    <ProjectReference Include="..\WordleHelper\WordleHelper.csproj" />
   </ItemGroup>
 
 </Project>

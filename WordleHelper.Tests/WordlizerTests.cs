@@ -1,7 +1,7 @@
-using WordleSolver.Models;
-using WordleSolver.Services;
+using WordleHelper.Models;
+using WordleHelper.Services;
 
-namespace WordleSolver.Tests
+namespace WordleHelper.Tests
 {
 	public class WordlizerTests
 	{

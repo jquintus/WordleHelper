@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using WordleSolver.Services;
+using WordleHelper.Services;
 
-namespace WordleSolver.Models
+namespace WordleHelper.Models
 {
 	public class InputModel
 	{

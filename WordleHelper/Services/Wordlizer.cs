@@ -1,6 +1,6 @@
-﻿using WordleSolver.Models;
+﻿using WordleHelper.Models;
 
-namespace WordleSolver.Services
+namespace WordleHelper.Services
 {
 	public class Wordlizer : IWordlizer
 	{
