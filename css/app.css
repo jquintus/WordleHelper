@@ -96,3 +96,7 @@ a, .btn-link {
     /*background: #646aaa;*/
     /*background: #aa646a*/
 }
+
+.right-aligned {
+    text-align: right;
+}
