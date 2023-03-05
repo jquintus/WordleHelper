@@ -241,15 +241,15 @@
       "url": "css\/open-iconic\/README.md"
     },
     {
-      "hash": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=",
+      "hash": "sha256-dEhQ9ELkLjpd6TyhUSXFq1CK86f6oWTVhCfciCzr3kE=",
       "url": "favicon.ico"
     },
     {
-      "hash": "sha256-DbpQaq68ZSb5IoPosBErM1QWBfsbTxpJqhU0REi6wP4=",
+      "hash": "sha256-e2mzsLFfvuEPLbUJrJ05tTwNSjnCgMGaDMoV1D6Uyt4=",
       "url": "icon-192.png"
     },
     {
-      "hash": "sha256-oEo6d+KqX5fjxTiZk\/w9NB3Mi0+ycS5yLwCKwr4IkbA=",
+      "hash": "sha256-qs0C2HGxfdCTxmi3z+jZcucCgQFxxKEyqli0x+8jRNc=",
       "url": "icon-512.png"
     },
     {
@@ -265,5 +265,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "CN2lV5YC"
+  "version": "SFHlZU1g"
 };
