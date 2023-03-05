@@ -20,6 +20,9 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 <br />
 <br />
 
+
+
+
 <EditForm Model=@Model OnValidSubmit="@AddWord">
 	<DataAnnotationsValidator />
 	<ValidationSummary />
@@ -44,8 +47,8 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 						@foreach (var letter in guess.Letters)
 						{
 							<button @onclick=letter.ToggleState
-							  style="background-color:@letter.Color"
-							  class="letterButton">
+				  style="background-color:@letter.Color"
+				  class="letterButton">
 								@letter
 							</button>
 						}
@@ -56,18 +59,19 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 	</table>
 }
 
+
+
 @if (Model.Suggestions.Any())
 {
 	<br />
-	<div>
-		<h2> Suggestions </h2>
-
-		<ul class="list-group">
-			@foreach (var suggestion in Model.Suggestions)
-			{
-				<li class="list-group-item">@suggestion</li>
-			}
-		</ul>
+	<h2> Suggestions </h2>
+	<div class="row row-cols-2 row-cols-sm-3 row-cols-sm-3">
+		@foreach (var suggestion in Model.Suggestions)
+		{
+			<div class="col">
+				@suggestion
+			</div>
+		}
 	</div>
 }
 
