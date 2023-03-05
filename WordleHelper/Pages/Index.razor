@@ -34,7 +34,6 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 
 @if (Model.Guesses.Any())
 {
-
 	<h2> Guesses </h2>
 	<table>
 		<tbody>
@@ -45,8 +44,8 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 						@foreach (var letter in guess.Letters)
 						{
 							<button @onclick=letter.ToggleState
-				  style="background-color:@letter.Color"
-				  class="letterButton">
+							  style="background-color:@letter.Color"
+							  class="letterButton">
 								@letter
 							</button>
 						}
@@ -59,33 +58,22 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 
 @if (Model.Suggestions.Any())
 {
+	<br />
 	<div>
-		<br />
 		<h2> Suggestions </h2>
 
-		<table>
-			<tbody>
-				@foreach (var suggestion in Model.Suggestions)
-				{
-					<tr>
-						<td>@suggestion</td>
-					</tr>
-				}
-			</tbody>
-
-			<br />
-
-			@*<button @onclick=@Reset class="clearButton"> Clear </button>*@
-		</table>
-
-		@*<button @onclick=@GenerateSuggestions class="generateButton"> Generate </button>*@
+		<ul class="list-group">
+			@foreach (var suggestion in Model.Suggestions)
+			{
+				<li class="list-group-item">@suggestion</li>
+			}
+		</ul>
 	</div>
 }
-<br />
 
 @if (Model.Guesses.Any())
 {
-
+	<br />
 	<div class="right-aligned">
 		<div class="btn-group" role="group" aria-label="Basic example">
 			<button type="button" class="btn btn-secondary" @onclick=@GenerateSuggestions>Generate</button>
