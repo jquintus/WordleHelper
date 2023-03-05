@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-iBiyyV7F4GdtqtWTwzHEHhns30kvTXnaYOVJhC0RRg8=",
+      "hash": "sha256-M8MPfYLbtCJ1yLyrHBFoPE\/w\/Rn0Oj0fc\/fdsUpfzxQ=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -185,7 +185,7 @@
       "url": "_framework\/System.Text.Json.dll"
     },
     {
-      "hash": "sha256-FnNDDgftveyfpaXeThUzNtbcAwskcbT2WgX0d8WO2GY=",
+      "hash": "sha256-mE51V2+nBw47iCL9DdELTtZ3Jw0JECTxOP4PCmAz5yE=",
       "url": "_framework\/WordleHelper.dll"
     },
     {
@@ -245,11 +245,11 @@
       "url": "favicon.ico"
     },
     {
-      "hash": "sha256-e2mzsLFfvuEPLbUJrJ05tTwNSjnCgMGaDMoV1D6Uyt4=",
+      "hash": "sha256-k01pKDdsnUbCoAFnv+X2JEy90niA5LWF6Cj7wQSvVxE=",
       "url": "icon-192.png"
     },
     {
-      "hash": "sha256-qs0C2HGxfdCTxmi3z+jZcucCgQFxxKEyqli0x+8jRNc=",
+      "hash": "sha256-ZRWxaepG1kLxmVV9Rlftma\/a0Zo+FuKIM4S3K1K1a7Y=",
       "url": "icon-512.png"
     },
     {
@@ -265,5 +265,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "SFHlZU1g"
+  "version": "fUvSThXa"
 };
