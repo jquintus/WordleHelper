@@ -6,12 +6,6 @@ namespace WordleSolver.Tests
 	public class WordlizerTests
 	{
 		[Fact]
-		public void FailingTest()
-		{
-			Assert.Fail("Failing a test to see how the build behaves");
-		}
-
-		[Fact]
 		public void GeneratePermumations_MultipleUncertainLetters_ReturnsAllPermutations()
 		{
 			// Assemble
