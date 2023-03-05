@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-ARWuNOOzja9ifDEWarpiaG8bcR90Sfu1Jk9\/CF5i\/10=",
+      "hash": "sha256-xIocJ6M\/8gfPaDNR+iB9tt0MAB9vqUx\/7ijGaycmSV8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -41,11 +41,11 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.dll"
     },
     {
-      "hash": "sha256-t3s5cb836t\/SeiCTCvFwSTxfme6wPxTdGVvpVc\/3Pmk=",
+      "hash": "sha256-xw+SGI5jHDYReyAUBCq04Y2UmpbjWPu\/UPgwshROiHw=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Forms.dll"
     },
     {
-      "hash": "sha256-gnZSUX4H5kM2yR2MhnzqcmQO4FTKLpDMt\/H5M4bxjUQ=",
+      "hash": "sha256-IbQ0TqJuDWmpIhLlNt2Zn\/jDGPo2QPTmxn4dBWTp9G0=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.dll"
     },
     {
@@ -113,15 +113,19 @@
       "url": "_framework\/System.Collections.Specialized.dll"
     },
     {
+      "hash": "sha256-JG\/nhqLrf\/YNo2Vo8M6YJPWDKO0vKgRPST6EFW0HwQQ=",
+      "url": "_framework\/System.ComponentModel.Annotations.dll"
+    },
+    {
       "hash": "sha256-kYvmM+4he22v26dhiHnIYrXJ8fU9VWWMiiTQi9FRe+s=",
       "url": "_framework\/System.ComponentModel.dll"
     },
     {
-      "hash": "sha256-RTgfINWh370ERmau7lxq02O7Qb8jkkVvBgLXRAyQJeo=",
+      "hash": "sha256-47rNwiBpfz5A4HYpFoqoop1nzuc7bkt+UMma030BBiI=",
       "url": "_framework\/System.ComponentModel.Primitives.dll"
     },
     {
-      "hash": "sha256-aBMw03TsquuRdUuQI7H4ziuhXI8RxTSmNAJB1rRTKKw=",
+      "hash": "sha256-v96KfJbkouaqBs1fr2HbMrh0ApuDxrEDAG9oaKrFK+k=",
       "url": "_framework\/System.ComponentModel.TypeConverter.dll"
     },
     {
@@ -129,7 +133,7 @@
       "url": "_framework\/System.dll"
     },
     {
-      "hash": "sha256-r2hYsp0XDSxOPBZA42MJWB4Lpjv536ajwe7Am+TG9sg=",
+      "hash": "sha256-qglsu+DYh35rTiCASM5dsEj6OPCo+VscMMH5JP08CEk=",
       "url": "_framework\/System.Linq.dll"
     },
     {
@@ -153,7 +157,7 @@
       "url": "_framework\/System.ObjectModel.dll"
     },
     {
-      "hash": "sha256-PEJ17xAda2NKQP1wgPmtkFutLuJXlAUXih4qfTnKbD4=",
+      "hash": "sha256-+KaE9eq3QaFJtQGgyfqHbC9mcM5CSRnXA0nkyICZL\/s=",
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
@@ -181,7 +185,7 @@
       "url": "_framework\/System.Text.Json.dll"
     },
     {
-      "hash": "sha256-proPus9pzpB8kWw6hY3eTN6g8moeKd++iCY79TjmibU=",
+      "hash": "sha256-uRILMVJWJ98aKPAVIgpxRjYUk9YJ\/yUHfgwz88MPmII=",
       "url": "_framework\/WordleSolver.dll"
     },
     {
@@ -261,5 +265,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "W0\/I4PYU"
+  "version": "nCFel1IP"
 };
