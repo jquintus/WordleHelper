@@ -1,4 +1,5 @@
-﻿using WordleSolver.Services;
+﻿using System.ComponentModel.DataAnnotations;
+using WordleSolver.Services;
 
 namespace WordleSolver.Models
 {
@@ -8,6 +9,9 @@ namespace WordleSolver.Models
 
 		public List<GuessModel> Guesses { get; private set; }
 		public List<string> Suggestions { get; private set; }
+
+		[Required]
+		[StringLength(5, MinimumLength =5, ErrorMessage = "Words must be 5 letters long.")]
 		public string Word { get; set; }
 
 		public InputModel(IWordlizer service)

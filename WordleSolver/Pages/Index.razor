@@ -10,7 +10,10 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 <br />
 <br />
 
-<EditForm Model=@Model OnSubmit="@AddWord">
+<EditForm Model=@Model OnValidSubmit="@AddWord">
+	<DataAnnotationsValidator />
+	<ValidationSummary />
+
 	<InputText id="name" @bind-Value="@Model.Word" />
 
 	<button type="submit">Submit</button>
@@ -64,11 +67,11 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 
 
 @code {
-	private InputModel Model { get; set; } = new(new Wordlizer());
+	InputModel Model { get; set; } = new(new Wordlizer());
 	private void AddWord()
 	{
 		Model.AddGuess(Model.Word);
-		Model.Word = string.Empty;
+		Model.Word = null;
 	}
 
 	private void Reset() => Model.Reset();
