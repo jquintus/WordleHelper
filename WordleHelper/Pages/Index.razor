@@ -32,26 +32,27 @@
 	<h2> Guesses </h2>
 
 	<div class="container">
-		<table>
-			<tbody>
-				@foreach (var guess in Model.Guesses)
-				{
-					<tr>
-						<td>
-							@foreach (var letter in guess.Letters)
-							{
-								<button @onclick=letter.ToggleState
-				   style="background-color:@letter.Color"
-				   class="letterButton">
-									@letter
-								</button>
-							}
-						</td>
-					</tr>
-				}
-			</tbody>
-		</table>
-	</div>
+
+		<ul class="list-group list-group-flush">
+			@foreach (var guess in Model.Guesses)
+			{
+				<div class="container">
+				<li class="list-group-item border-0">
+						@foreach (var letter in guess.Letters)
+						{
+						<button @onclick=letter.ToggleState
+				 style="background-color:@letter.Color"
+				 class="letterButton">
+								@letter
+						</button>
+						}
+
+				</li>
+		</div>
+			}
+			</ul>
+
+		</div>
 }
 else
 {
