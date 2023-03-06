@@ -36,23 +36,21 @@
 		<ul class="list-group list-group-flush">
 			@foreach (var guess in Model.Guesses)
 			{
-				<div class="container">
 				<li class="list-group-item border-0">
-						@foreach (var letter in guess.Letters)
-						{
+					@foreach (var letter in guess.Letters)
+					{
 						<button @onclick=letter.ToggleState
 				 style="background-color:@letter.Color"
 				 class="letterButton">
-								@letter
+							@letter
 						</button>
-						}
+					}
 
 				</li>
-		</div>
 			}
-			</ul>
+		</ul>
 
-		</div>
+	</div>
 }
 else
 {
