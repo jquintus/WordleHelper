@@ -32,22 +32,19 @@
 	{
 		<h1> Guesses </h1>
 
-		<ul class="list-group">
-			@foreach (var guess in Model.Guesses)
+		@foreach (var guess in Model.Guesses)
+		{
+			@foreach (var letter in guess.Letters)
 			{
-				<li class="list-group-item border-0">
-					@foreach (var letter in guess.Letters)
-					{
-						<button @onclick=letter.ToggleState
-				 style="background-color:@letter.Color"
-				 class="letterButton">
-							@letter
-						</button>
-					}
-
-				</li>
+				<button @onclick=letter.ToggleState
+			   style="background-color:@letter.Color"
+			   class="letterButton">
+					@letter
+				</button>
 			}
-		</ul>
+
+			<br />
+		}
 	}
 	else
 	{
@@ -84,7 +81,7 @@
 							Clicking on a letter above once will turn it yellow
 						</p>
 
-						<button style="background-color:#c9b458" class="letterButton">
+						<button class="letterButton yellow">
 							A
 						</button>
 					</li>
@@ -93,7 +90,7 @@
 							Clicking on it a second time will turn it green
 						</p>
 
-						<button style="background-color:#6aaa64" class="letterButton">
+						<button class="letterButton green">
 							A
 						</button>
 					</li>
