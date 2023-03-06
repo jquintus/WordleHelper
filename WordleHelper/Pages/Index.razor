@@ -18,14 +18,13 @@
 <div class="container">
 	<EditForm Model=@Model OnValidSubmit="@AddWord">
 		<DataAnnotationsValidator />
-		<ValidationSummary />
-
 		<div class="input-group mb-3">
 			<InputText @bind-Value="@Model.Word" type="text" class="form-control" placeholder="Guess" aria-label="guess" aria-describedby="button-addon2" />
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" type="submit">Submit</button>
+				<button class="btn btn-outline-secondary" type="submit">Add</button>
 			</div>
 		</div>
+		<ValidationSummary />
 	</EditForm>
 
 	@if (Model.Guesses.Any())
@@ -49,7 +48,7 @@
 	else
 	{
 		<p>
-			Enter your guesses from Wordle above to get started
+			Add your guesses from Wordle above to get started
 		</p>
 	}
 
