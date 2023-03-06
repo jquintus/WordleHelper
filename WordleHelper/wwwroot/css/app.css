@@ -64,10 +64,10 @@ a, .btn-link {
     }
 
 .letterButton {
-    width: 2em;
-    height: 2em;
+    width: 1.85em;
+    height: 1.85em;
     margin: 2px;
-    font-size: 2em;
+    font-size: 1.85em;
     font-family: "Franklin Gothic";
     border-color: white;
     color: white;
