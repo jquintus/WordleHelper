@@ -67,7 +67,7 @@ a, .btn-link {
     width: 1.85em;
     height: 1.85em;
     margin: 2px;
-    font-size: 1.85em;
+    font-size: 2em;
     font-family: "Franklin Gothic";
     border-color: white;
     color: white;
@@ -99,4 +99,12 @@ a, .btn-link {
 
 .right-aligned {
     text-align: right;
+}
+
+.yellow {
+    background-color: #c9b458;
+}
+
+.green {
+    background-color: #6aaa64;
 }
