@@ -11,7 +11,7 @@ namespace WordleHelper.Models
 		public List<string> Suggestions { get; private set; }
 
 		[Required]
-		[StringLength(5, MinimumLength =5, ErrorMessage = "Words must be 5 letters long.")]
+		[StringLength(5, MinimumLength = 5, ErrorMessage = "Guesses must be 5 letters long.")]
 		public string Word { get; set; }
 
 		public InputModel(IWordlizer service)

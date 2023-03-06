@@ -15,14 +15,6 @@
 	</a>
 </nav>
 
-Enter your guesses from Wordle. Click on the letters in the word list to match the results from Wordle.
-
-<br />
-<br />
-
-
-
-
 <EditForm Model=@Model OnValidSubmit="@AddWord">
 	<DataAnnotationsValidator />
 	<ValidationSummary />
@@ -38,35 +30,44 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 @if (Model.Guesses.Any())
 {
 	<h2> Guesses </h2>
-	<table>
-		<tbody>
-			@foreach (var guess in Model.Guesses)
-			{
-				<tr>
-					<td>
-						@foreach (var letter in guess.Letters)
-						{
-							<button @onclick=letter.ToggleState
-				  style="background-color:@letter.Color"
-				  class="letterButton">
-								@letter
-							</button>
-						}
-					</td>
-				</tr>
-			}
-		</tbody>
-	</table>
+
+	<div class="container">
+		<table>
+			<tbody>
+				@foreach (var guess in Model.Guesses)
+				{
+					<tr>
+						<td>
+							@foreach (var letter in guess.Letters)
+							{
+								<button @onclick=letter.ToggleState
+				   style="background-color:@letter.Color"
+				   class="letterButton">
+									@letter
+								</button>
+							}
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
 }
-
-
+else
+{
+	<div class="container">
+		<p>
+			Enter your guesses from Wordle above to get started
+		</p>
+	</div>
+}
 
 @if (Model.Suggestions.Any())
 {
 	<br />
 	<h2> Suggestions </h2>
 
-	<div class="row row-cols-4 row-cols-sm-4">
+	<div class="row row-cols-4 row-cols-sm-4	">
 		@foreach (var suggestion in Model.Suggestions)
 		{
 			<div class="col">
@@ -75,13 +76,56 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 		}
 	</div>
 }
+else if (Model.Guesses.Any())
+{
+	<br />
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<ol>
+					<li>
+						<p>
+							Clicking on a letter above once will turn it yellow
+						</p>
+
+						<button style="background-color:#c9b458" class="letterButton">
+							A
+						</button>
+					</li>
+					<li>
+						<p>
+							Clicking on it a second time will turn it green
+						</p>
+
+						<button style="background-color:#6aaa64" class="letterButton">
+							A
+						</button>
+					</li>
+
+					<li>
+						<p>
+							Clicking on it a third time will turn it back to grey
+						</p>
+
+						<button class="letterButton">
+							A
+						</button>
+					</li>
+					<li>
+						Once you've marked each letter in your guesses press the Generate Suggestions button below
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+}
 
 @if (Model.Guesses.Any())
 {
 	<br />
 	<div class="right-aligned">
 		<div class="btn-group" role="group" aria-label="Basic example">
-			<button type="button" class="btn btn-secondary" @onclick=@GenerateSuggestions>Generate</button>
+			<button type="button" class="btn btn-secondary" @onclick=@GenerateSuggestions>Generate Suggestions</button>
 			<button type="button" class="btn btn-secondary" @onclick=@Reset>Clear</button>
 		</div>
 	</div>
@@ -93,7 +137,7 @@ Enter your guesses from Wordle. Click on the letters in the word list to match t
 	private void AddWord()
 	{
 		Model.AddGuess(Model.Word);
-		Model.Word = null;
+		Model.Word = string.Empty;
 	}
 
 	private void Reset() => Model.Reset();
