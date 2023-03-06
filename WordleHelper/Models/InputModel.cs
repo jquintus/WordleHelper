@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text;
 using WordleHelper.Services;
 
 namespace WordleHelper.Models
@@ -36,6 +37,7 @@ namespace WordleHelper.Models
 
 			Suggestions = _service
 				.GeneratePermutations(letters)
+				.Select(s => AddSpaces(s))
 				.ToList();
 		}
 
@@ -43,6 +45,20 @@ namespace WordleHelper.Models
 		{
 			Guesses = new List<GuessModel>();
 			Suggestions = new List<string>();
+		}
+
+		private static string AddSpaces(string s)
+		{
+			StringBuilder sb = new StringBuilder(s.Length * 2);
+
+			foreach (var c in s)
+			{
+				sb.Append(c);
+				sb.Append(' ');
+			}
+
+			sb.Length--;
+			return sb.ToString();
 		}
 	}
 }
