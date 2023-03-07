@@ -35,7 +35,7 @@
 		{
 			@foreach (var letter in guess.Letters)
 			{
-				<button @onclick=letter.ToggleState
+				<button @onclick="() => ToggleLetter(letter)"
 			   style="background-color:@letter.Color"
 			   class="letterButton">
 					@letter
@@ -108,7 +108,7 @@
 					Once you've marked each letter in your guesses press the Generate Suggestions button below
 				</li>
 				<li style="margin-bottom:10px">
-					Clicking on any of the suggestions will remove it from the list but you can always press Generate Suggestions again to get the full list back
+					Clicking on any of the suggestions will remove it from the list
 				</li>
 			</ol>
 		</div>
@@ -116,7 +116,6 @@
 
 	@if (Model.Guesses.Any())
 	{
-		<br />
 		<div class="right-aligned">
 			<div class="btn-group" role="group" aria-label="Basic example">
 				<button type="button" class="btn btn-secondary" @onclick=@GenerateSuggestions>Generate Suggestions</button>
@@ -138,4 +137,9 @@
 	private void GenerateSuggestions() => Model.GenerateSuggestions();
 	private void Reset() => Model.Reset();
 	private void RemoveSuggestion(string suggestion) => Model.Suggestions.Remove(suggestion);
+	private void ToggleLetter(LetterModel letter)
+	{
+		letter.ToggleState();
+		GenerateSuggestions();
+	}
 }
