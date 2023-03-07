@@ -35,7 +35,7 @@
 		{
 			@foreach (var letter in guess.Letters)
 			{
-				<button @onclick="() => ToggleLetter(letter)"
+				<button @onclick=letter.ToggleState
 			   style="background-color:@letter.Color"
 			   class="letterButton">
 					@letter
@@ -137,9 +137,4 @@
 	private void GenerateSuggestions() => Model.GenerateSuggestions();
 	private void Reset() => Model.Reset();
 	private void RemoveSuggestion(string suggestion) => Model.Suggestions.Remove(suggestion);
-	private void ToggleLetter(LetterModel letter)
-	{
-		letter.ToggleState();
-		GenerateSuggestions();
-	}
 }
