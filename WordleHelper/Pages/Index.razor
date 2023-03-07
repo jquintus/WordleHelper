@@ -61,10 +61,12 @@
 			@foreach (var suggestion in Model.Suggestions)
 			{
 				<div class="col">
-					@*<p style="font-size:large;">*@
-					<p class="lead">
+
+					<button button type="button" class="btn"
+					@onclick="() => RemoveSuggestion(suggestion)">
 						@suggestion
-					</p>
+					</button>
+
 				</div>
 			}
 		</div>
@@ -73,41 +75,42 @@
 	{
 		<br />
 		<div class="row">
-			<div class="col-md-4">
-				<ol>
-					<li>
-						<p>
-							Clicking on a letter above once will turn it yellow
-						</p>
+			<ol>
+				<li style="margin-bottom:10px">
+					<p style="margin:0">
+						Clicking on a letter above once will turn it yellow
+					</p>
 
-						<button class="letterButton yellow">
-							A
-						</button>
-					</li>
-					<li>
-						<p>
-							Clicking on it a second time will turn it green
-						</p>
+					<button class="letterButton yellow">
+						A
+					</button>
+				</li>
+				<li style="margin-bottom:10px">
+					<p style="margin:0">
+						Clicking on it a second time will turn it green
+					</p>
 
-						<button class="letterButton green">
-							A
-						</button>
-					</li>
+					<button class="letterButton green">
+						A
+					</button>
+				</li>
 
-					<li>
-						<p>
-							Clicking on it a third time will turn it back to grey
-						</p>
+				<li style="margin-bottom:10px">
+					<p style="margin:0">
+						Clicking on it a third time will turn it back to grey
+					</p>
 
-						<button class="letterButton">
-							A
-						</button>
-					</li>
-					<li>
-						Once you've marked each letter in your guesses press the Generate Suggestions button below
-					</li>
-				</ol>
-			</div>
+					<button class="letterButton">
+						A
+					</button>
+				</li>
+				<li style="margin-bottom:10px">
+					Once you've marked each letter in your guesses press the Generate Suggestions button below
+				</li>
+				<li style="margin-bottom:10px">
+					Clicking on any of the suggestions will remove it from the list but you can always press Generate Suggestions again to get the full list back
+				</li>
+			</ol>
 		</div>
 	}
 
@@ -132,6 +135,7 @@
 		Model.Word = string.Empty;
 	}
 
-	private void Reset() => Model.Reset();
 	private void GenerateSuggestions() => Model.GenerateSuggestions();
+	private void Reset() => Model.Reset();
+	private void RemoveSuggestion(string suggestion) => Model.Suggestions.Remove(suggestion);
 }
