@@ -15,17 +15,16 @@ permissions:
   
 jobs:
   deploy-to-github-pages:
-    # use ubuntu-latest image to run steps on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
     # uses GitHub's checkout action to checkout code form the master branch
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
     
     # sets up .NET Core SDK
     - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: 7.0.201
+        dotnet-version: 6.0.x
 
     - name: Install dependencies
       run: dotnet restore
@@ -46,9 +45,9 @@ jobs:
 
     # Comit the code to the gh-pages branch which will trigger github to update the page.
     - name: Commit wwwroot to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@3.7.1
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: release/wwwroot
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+        folder: release/wwwroot
 
