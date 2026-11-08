@@ -2,6 +2,6 @@
 {
 	public interface IWordlizer
 	{
-		IEnumerable<string> GeneratePermutations(IEnumerable<WordleLetter> letters, int length = 5);
+		IEnumerable<string> GeneratePermutations(IEnumerable<WordleGuess> guesses, int length = 5);
 	}
 }

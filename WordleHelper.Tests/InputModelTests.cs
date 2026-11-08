@@ -51,6 +51,24 @@ namespace WordleHelper.Tests
 			Assert.Equal("CRANE", model.Guesses.Single().ToString());
 		}
 
+		[Fact]
+		public void GenerateSuggestions_SameYellowLetterAcrossGuesses_RequiresOneCopy()
+		{
+			// Assemble
+			var model = new InputModel(new Wordlizer());
+			model.AddGuess("EXXXX");
+			model.AddGuess("XEXXX");
+			model.Guesses[0].Letters[0].ToggleState();
+			model.Guesses[1].Letters[1].ToggleState();
+
+			// Act
+			model.GenerateSuggestions();
+
+			// Assert
+			Assert.Equal(3, model.Suggestions.Count);
+			Assert.All(model.Suggestions, suggestion => Assert.Equal(1, suggestion.Count(l => l == 'E')));
+		}
+
 		private static List<ValidationResult> Validate(InputModel model)
 		{
 			var results = new List<ValidationResult>();

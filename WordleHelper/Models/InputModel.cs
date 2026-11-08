@@ -36,12 +36,10 @@ namespace WordleHelper.Models
 
 		public void GenerateSuggestions()
 		{
-			var letters = Guesses
-				.SelectMany(g => g.Letters)
-				.Select(l => new WordleLetter(l.Letter.First(), l.Position, l.State));
+			var guesses = Guesses.Select(g => ToWordleGuess(g));
 
 			Suggestions = _service
-				.GeneratePermutations(letters)
+				.GeneratePermutations(guesses)
 				.Select(s => AddSpaces(s))
 				.ToList();
 		}
@@ -50,6 +48,15 @@ namespace WordleHelper.Models
 		{
 			Guesses = new List<GuessModel>();
 			Suggestions = new List<string>();
+		}
+
+		private static WordleGuess ToWordleGuess(GuessModel guess)
+		{
+			var letters = guess.Letters
+				.Select(l => new WordleLetter(l.Letter.First(), l.Position, l.State))
+				.ToList();
+
+			return new WordleGuess(letters);
 		}
 
 		private static string AddSpaces(string s)
