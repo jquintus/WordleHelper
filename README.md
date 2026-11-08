@@ -6,3 +6,13 @@
 
 Visit the site and [getting some hints for Wordle](https://quintussential.com/WordleHelper/)
 
+# Running Local
+
+You can run this project locally in docker
+
+```bash
+docker run --rm -it -p 5123:5123 -v "$PWD:/src" -w /src \
+    -e ASPNETCORE_URLS=http://0.0.0.0:5123 \
+    mcr.microsoft.com/dotnet/sdk:6.0 \
+    dotnet run --project WordleHelper/WordleHelper.csproj --no-launch-profile
+```
