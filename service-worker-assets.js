@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "ABNSvdv1",
+  "version": "fbP9J+d9",
   "assets": [
     {
       "hash": "sha256-TnVF2n/uNjQ+2wCq+6tPEVO5EvMW4yEWaClX3zG4tao=",
@@ -154,11 +154,11 @@ self.assetsManifest = {
       "url": "_framework/System.dll"
     },
     {
-      "hash": "sha256-JXaejQSUDK/kr9NcN0obXbs0BH3ZSTDi6EzIuP9DD3c=",
+      "hash": "sha256-ygsaYV5fhnpObP6lhGpCs0x9gPVDR1jbeyAZ//1HiKY=",
       "url": "_framework/WordleHelper.dll"
     },
     {
-      "hash": "sha256-PMJJoN92b5RcdqQFGAC7zandlax4WrWAHiZJttH23Kw=",
+      "hash": "sha256-+8fCa5G1Nms45jqnH2zgT9zvuFharmrSpfPGtiXbfGI=",
       "url": "_framework/blazor.boot.json"
     },
     {

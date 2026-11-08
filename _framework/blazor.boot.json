@@ -1,7 +1,7 @@
 {
   "entryAssembly": "WordleHelper",
   "resources": {
-    "hash": "sha256-zJbTZRt3yYtM8HU0CKB0QBc5NGWBx2YwepIseAsQWGo=",
+    "hash": "sha256-1ms/WYz2y7EiaYKzQGjL4uqivUA7iNZyDI6brgykL/s=",
     "runtime": {
       "dotnet.js": "sha256-pu7MO47B6So4jcW6iY2UI11lBZYz2EQnJKiYNsOpNJg=",
       "dotnet.timezones.blat": "sha256-vrFYQt55a4tGoDGoyRfjjGa1nSecx646RK78iTzPWCM=",
@@ -49,7 +49,7 @@
       "System.Text.Json.dll": "sha256-bUvPVQ2v30MKqPMrqdrBoiyeQXEWCSmAcTj15x5O1nc=",
       "System.dll": "sha256-/CoLM+0eZmBCLWHyE5EaG/XonczpuGmu7BxChElWHqE=",
       "System.Private.CoreLib.dll": "sha256-aYp9CPRGoC3Q1pQxxBk6eXo7CaSxy0yiTuRyYWiQavM=",
-      "WordleHelper.dll": "sha256-JXaejQSUDK/kr9NcN0obXbs0BH3ZSTDi6EzIuP9DD3c="
+      "WordleHelper.dll": "sha256-ygsaYV5fhnpObP6lhGpCs0x9gPVDR1jbeyAZ//1HiKY="
     },
     "runtimeAssets": {
       "dotnet.wasm": {
