@@ -7,13 +7,18 @@ namespace WordleHelper.Models
 	public class InputModel
 	{
 		private readonly IWordlizer _service;
+		private string _word = string.Empty;
 
 		public List<GuessModel> Guesses { get; private set; }
 		public List<string> Suggestions { get; private set; }
 
 		[Required]
 		[StringLength(5, MinimumLength = 5, ErrorMessage = "Guesses must be 5 letters long.")]
-		public string Word { get; set; }
+		public string Word
+		{
+			get => _word;
+			set => _word = value?.Trim() ?? string.Empty;
+		}
 
 		public InputModel(IWordlizer service)
 		{
